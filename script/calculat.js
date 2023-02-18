@@ -102,3 +102,32 @@ document.getElementById('rectangle-calculate').addEventListener('click', functio
     }
 
 })
+
+
+
+
+
+// parallelogram area calculation ;
+document.getElementById('parallelogram-calculate').addEventListener('click', function () {
+  
+    const base = getNumberValueFromInput('parallelogram-b');
+    const height = getNumberValueFromInput('parallelogram-h');
+    const name = getTextFromTag('parallelogram');
+    
+
+    if(isNaN(base) || isNaN(height)){
+        alert('Please enter a number')
+    }
+
+    else if(base < 0 || height < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const area = base * height ;
+    
+    tableRaw(name, area);
+    }
+
+})
