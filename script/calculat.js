@@ -31,6 +31,7 @@ function getNumberValueFromInput(inputId){
     const inputText = document.getElementById(inputId);
     const numberValueString = inputText.value;
     const number = parseFloat(numberValueString);
+    inputText.value = '';
 
     return number ;
 }
@@ -47,11 +48,12 @@ function getTextFromTag(tagId){
 
 
 
-
+// Triangle area calculation 
 document.getElementById('triangle-calculate').addEventListener('click', function () {
   
     const base = getNumberValueFromInput('triangle-b');
     const height = getNumberValueFromInput('triangle-h');
+    const name = getTextFromTag('triangle');
     
 
     if(isNaN(base) || isNaN(height)){
@@ -66,7 +68,6 @@ document.getElementById('triangle-calculate').addEventListener('click', function
         count += 1;
         const area = 0.5* base * height ;
    
-        const name = getTextFromTag('triangle')
     
     
     tableRaw(name, area);
@@ -75,3 +76,29 @@ document.getElementById('triangle-calculate').addEventListener('click', function
 })
 
 
+
+
+// rectangle area calculation 
+document.getElementById('rectangle-calculate').addEventListener('click', function () {
+  
+    const width = getNumberValueFromInput('rectangle-w');
+    const length = getNumberValueFromInput('rectangle-l');
+    const name = getTextFromTag('rectangle');
+    
+
+    if(isNaN(width) || isNaN(length)){
+        alert('Please enter a number')
+    }
+
+    else if(width < 0 || length < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const area = width * length ;
+    
+    tableRaw(name, area);
+    }
+
+})
