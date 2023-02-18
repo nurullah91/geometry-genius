@@ -131,3 +131,62 @@ document.getElementById('parallelogram-calculate').addEventListener('click', fun
     }
 
 })
+
+
+
+
+// Rhombus area calculation ;
+document.getElementById('Rhombus-calculate').addEventListener('click', function () {
+  
+    const d1 = getNumberValueFromInput('Rhombus-d1');
+    const d2 = getNumberValueFromInput('Rhombus-d2');
+    const name = getTextFromTag('Rhombus');
+    
+
+    if(isNaN(d1) || isNaN(d2)){
+        alert('Please enter a number')
+    }
+
+    else if(d1 < 0 || d2 < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const area = 0.5 * d1 * d2 ;
+    
+    tableRaw(name, area);
+    }
+
+})
+
+
+
+
+
+
+
+// Pentagon calculation
+document.getElementById('Pentagon-calculate').addEventListener('click', function () {
+  
+    const perimeter = getNumberValueFromInput('Pentagon-p');
+    const base = getNumberValueFromInput('Pentagon-b');
+    const name = getTextFromTag('Pentagon');
+    
+
+    if(isNaN(perimeter) || isNaN(base)){
+        alert('Please enter a number')
+    }
+
+    else if(perimeter < 0 || base < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const area = 0.5 * perimeter * base ;
+    
+    tableRaw(name, area);
+    }
+
+})
