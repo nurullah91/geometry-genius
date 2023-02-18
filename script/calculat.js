@@ -1,11 +1,8 @@
 
-
+// redirect from home page to blogs page 
 document.getElementById('blogs').addEventListener('click', function(){
     window.location.href = 'blogs.html'
 })
-
-
-
 
 
 
@@ -29,38 +26,51 @@ function tableRaw(name,area){
 
 }
 
+// get value form input id 
+function getNumberValueFromInput(inputId){
+    const inputText = document.getElementById(inputId);
+    const numberValueString = inputText.value;
+    const number = parseFloat(numberValueString);
 
-function getNumberValueFromInput(geometryBase, geometryHeight, geometryName){
-    const baseValue = document.getElementById(geometryBase);
-    const heightValue = document.getElementById(geometryHeight);
-    const geometryNameString = document.getElementById(geometryName);
+    return number ;
+}
 
 
-    const name = geometryName.innerHTML;
-    const baseValueString = baseValue.value;
-    const heightValueString = heightValue.value;
 
-    const base = parseFloat(baseValueString);
-    const height = parseFloat(heightValueString);
+// get text from a tag 
+function getTextFromTag(tagId){
+    const tagText = document.getElementById(tagId);
+    const text = tagText.innerHTML;
 
-    return {base,height,name};
+    return text;
 }
 
 
 
 
-
-
 document.getElementById('triangle-calculate').addEventListener('click', function () {
-    count += 1;
   
-    getNumberValueFromInput('triangle-b', 'triangle-h', 'triangle');
+    const base = getNumberValueFromInput('triangle-b');
+    const height = getNumberValueFromInput('triangle-h');
+    
 
-    // const area = 0.5 *base * height;
+    if(isNaN(base) || isNaN(height)){
+        alert('Please enter a number')
+    }
+
+    else if(base < 0 || height < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const area = 0.5* base * height ;
    
-
-
-tableRaw(name, area);
+        const name = getTextFromTag('triangle')
+    
+    
+    tableRaw(name, area);
+    }
 
 })
 
