@@ -190,3 +190,33 @@ document.getElementById('Pentagon-calculate').addEventListener('click', function
     }
 
 })
+
+
+
+
+
+// Ellipse calculation 
+document.getElementById('Ellipse-calculate').addEventListener('click', function () {
+  
+    const base = getNumberValueFromInput('Ellipse-b');
+    const height = getNumberValueFromInput('Ellipse-h');
+    const name = getTextFromTag('Ellipse');
+    
+
+    if(isNaN(base) || isNaN(height)){
+        alert('Please enter a number')
+    }
+
+    else if(base < 0 || height < 0){
+        alert('Please Enter positive base and height')
+    }
+
+    else{
+        count += 1;
+        const primaryArea = 3.14 * base * height ;
+        const area = primaryArea.toFixed(2);
+    
+    tableRaw(name, area);
+    }
+
+})
