@@ -1,31 +1,22 @@
 
+
+document.getElementById('blogs').addEventListener('click', function(){
+    window.location.href = 'blogs.html'
+})
+
+
+
+
+
+
+
+let count = 0;
+
 // table raw push
-
-
-
-
-let count = 0 ;
-document.getElementById('triangle-calculate').addEventListener('click', function(){
-    count += 1 ;
-    const baseValue = document.getElementById('triangle-b');
-    const heightValue = document.getElementById('triangle-h');
-    const geometryName = document.getElementById('triangle');
-
-
-    const name = geometryName.innerHTML ;
-    const baseValueString = baseValue.value ;
-    const heightValueString = heightValue.value ;
-
-    const base = parseFloat(baseValueString);
-    const height = parseFloat(heightValueString);
-
-    const area = 0.5 * base * height ;
-
-
-
+function tableRaw(name,area){
     const tableContainer = document.getElementById('table-container');
-const tr = document.createElement('tr');
-tr.innerHTML = `
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
     <td>${count}.</td>
     <td>${name}</td>
     <td class="pl-3">${area}cm<sup>2</sup></td>
@@ -34,8 +25,43 @@ tr.innerHTML = `
     
    
 `;
-tableContainer.appendChild(tr);
+    tableContainer.appendChild(tr);
+
+}
+
+
+function getNumberValueFromInput(geometryBase, geometryHeight, geometryName){
+    const baseValue = document.getElementById(geometryBase);
+    const heightValue = document.getElementById(geometryHeight);
+    const geometryNameString = document.getElementById(geometryName);
+
+
+    const name = geometryName.innerHTML;
+    const baseValueString = baseValue.value;
+    const heightValueString = heightValue.value;
+
+    const base = parseFloat(baseValueString);
+    const height = parseFloat(heightValueString);
+
+    return {base,height,name};
+}
+
+
+
+
+
+
+document.getElementById('triangle-calculate').addEventListener('click', function () {
+    count += 1;
+  
+    getNumberValueFromInput('triangle-b', 'triangle-h', 'triangle');
+
+    // const area = 0.5 *base * height;
    
+
+
+tableRaw(name, area);
+
 })
 
 
