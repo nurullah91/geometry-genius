@@ -66,7 +66,8 @@ document.getElementById('triangle-calculate').addEventListener('click', function
 
     else{
         count += 1;
-        const area = 0.5* base * height ;
+        const primaryArea = 0.5* base * height ;
+        const area = primaryArea.toFixed(2);
    
     
     
@@ -96,7 +97,8 @@ document.getElementById('rectangle-calculate').addEventListener('click', functio
 
     else{
         count += 1;
-        const area = width * length ;
+        const primaryArea = width * length ;
+        const area = primaryArea.toFixed(2);
     
     tableRaw(name, area);
     }
@@ -125,7 +127,8 @@ document.getElementById('parallelogram-calculate').addEventListener('click', fun
 
     else{
         count += 1;
-        const area = base * height ;
+        const primaryArea = base * height ;
+        const area = primaryArea.toFixed(2);
     
     tableRaw(name, area);
     }
@@ -153,7 +156,8 @@ document.getElementById('Rhombus-calculate').addEventListener('click', function 
 
     else{
         count += 1;
-        const area = 0.5 * d1 * d2 ;
+        const primaryArea = 0.5 * d1 * d2 ;
+        const area = primaryArea.toFixed(2);
     
     tableRaw(name, area);
     }
@@ -184,7 +188,8 @@ document.getElementById('Pentagon-calculate').addEventListener('click', function
 
     else{
         count += 1;
-        const area = 0.5 * perimeter * base ;
+        const primaryArea = 0.5 * perimeter * base ;
+        const area = primaryArea.toFixed(2);
     
     tableRaw(name, area);
     }
@@ -220,3 +225,57 @@ document.getElementById('Ellipse-calculate').addEventListener('click', function 
     }
 
 })
+
+
+
+
+
+// card background Color 
+
+// triangle background
+document.getElementById('triangle-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('triangle-body').style.backgroundColor = color;
+  })
+
+
+  // rectangle background
+document.getElementById('rectangle-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('rectangle-body').style.backgroundColor = color;
+  })
+
+
+  // parallelogram background
+document.getElementById('parallelogram-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('parallelogram-body').style.backgroundColor = color;
+  })
+
+
+  // rhombus background
+document.getElementById('rhombus-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('rhombus-body').style.backgroundColor = color;
+  })
+
+
+  // pentagon background
+document.getElementById('pentagon-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('pentagon-body').style.backgroundColor = color;
+  })
+
+
+
+ // ellipse background
+document.getElementById('ellipse-body').addEventListener('mouseover', function(){
+      const randomColor = Math.floor(Math.random()*16777215).toString(16);
+      const color = "#" + randomColor;
+    document.getElementById('ellipse-body').style.backgroundColor = color;
+  })

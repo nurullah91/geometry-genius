@@ -8,12 +8,13 @@
     <title>Geometry Genius</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/781754d0f2.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="md:m-[50px]">
 
     <header>
-        <div class="navbar bg-cyan-50">
+        <div class="navbar px-5 bg-cyan-50">
             <div class="flex-1">
                 <div>
                     <h2 class="block text-3xl font-bold">Interactive</h2>
@@ -27,10 +28,10 @@
     </header>
     <main>
         <section class="mt-8 md:flex">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 w-[70%] ">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:w-[70%] ">
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div id="triangle-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/triangle.png" alt="">
                     <h2 id="triangle" class="text-lg font-semibold">Triangle</h2>
                     <p>Area[A] = 0.5 * b * x</p>
@@ -48,7 +49,7 @@
 
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div  id="rectangle-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/rectangle.png" alt="">
                     <h2 id="rectangle" class="text-lg font-semibold">Rectangle</h2>
                     <p>Area[A] = w * l</p>
@@ -64,9 +65,9 @@
 
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div  id="parallelogram-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/parallelogram.png" alt="">
-                    <h2 id="parallelogram" class="text-lg font-semibold">parallelogram</h2>
+                    <h2 id="parallelogram" class="text-lg font-semibold">Parallelogram</h2>
                     <p>Area[A] =b * h</p>
 
                     <input id="parallelogram-b" class="  bg-slate-50 px-3 rounded-lg my-3 py-2" type="text"
@@ -80,7 +81,7 @@
 
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div  id="rhombus-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/rhombus.png" alt="">
                     <h2 id="Rhombus" class="text-lg font-semibold">Rhombus</h2>
                     <p>Area[A] = 0.5 * d<sub>1</sub> * d<sub>2</sub></p>
@@ -97,7 +98,7 @@
 
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div  id="pentagon-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/pentagon.png" alt="">
                     <h2 id="Pentagon" class="text-lg font-semibold">Pentagon</h2>
                     <p>Area[A] = 0.5 * p * b</p>
@@ -113,7 +114,7 @@
 
 
 
-                <div class="single-card text-center p-5 border-solid border rounded-lg">
+                <div  id="ellipse-body" class="single-card text-center p-5 border-solid border rounded-lg">
                     <img class="w-full h-[40%]" src="images/ellipse.png" alt="">
                     <h2 id="Ellipse" class="text-lg font-semibold">Ellipse</h2>
                     <p>Area[A] =3.14 * a * b</p>
@@ -129,7 +130,7 @@
 
             <div class="bg-slate-50 md:w-[28%] mx-auto text-center border-solid border p-3 rounded-lg">
                 <h3 class="text-lg font-semibold underline">Area Calculation</h3>
-                <table id="table-container">
+                <table id="table-container" class="w-full">
                 
                     
                 </table>
